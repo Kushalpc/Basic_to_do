@@ -5,7 +5,7 @@
     const list = document.querySelector("ul");
 
 
-    buttonEnter.addEventListener("click", () => {
+    function addTask() {
 
         const task = inputText.value;
         
@@ -42,4 +42,15 @@
         }
 
 
-    })
+    };
+
+    buttonEnter.addEventListener("click", addTask);
+
+    inputText.addEventListener("keydown", function(event){
+        if(event.key === "Enter"){
+            event.preventDefault();
+            addTask()
+        }
+
+
+    });
